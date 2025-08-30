@@ -60,12 +60,12 @@ while m < epochs:
         # Evaluar ahora el delta_k a la salida: 
         delta_k		=  (tk - zk) * dfo   
         #...y delta_j: 
-        delta_j		=  delta_k * (dfh.T * Wo)
+        delta_j		=  delta_k * (Wo.T * dfh)
         #% Ahora se actualizan los pesos
         ## los pesos de la capa de salida
         Wo				= Wo + eta * delta_k * y.T 
         ##% los pesos de la capa escondida
-        Wh				= Wh + eta * Xm @ delta_j
+        Wh				= Wh + eta * delta_j @ Xm.T
         
 
             
