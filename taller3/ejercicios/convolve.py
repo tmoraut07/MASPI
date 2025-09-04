@@ -47,7 +47,7 @@ def cnnConvolve(filterDim, numFilters, images, Wc, bc):
             #% convolvedImage para estar seguro de realizar una convolucion
             #% 'valida'
             #% Girar la matriz dada la definicion de convolucion si es necesario (con conv2 no lo es)
-            convolvedImage = signal.convolve(im, f)
+            convolvedImage = signal.convolve(im, f, mode="valid")
     
             #%%% IMPLEMENTACION AQUI %%%
             #% Agregar el bias 
@@ -56,6 +56,6 @@ def cnnConvolve(filterDim, numFilters, images, Wc, bc):
             #%%% IMPLEMENTACION AQUI %%%
             #% Luego, aplicar la funcion sigmoide para obtener la activacion de 
             #% la neurona.
-            convolvedFeatures[:, :, filterNum, imageNum] = 1 / (1 + np.exp(-convolvedImage))
+            convolvedFeatures[:, :, filterNum, imageNum] = 1 / (1 + np.exp(-1 * convolvedImage))
 
     return convolvedFeatures
