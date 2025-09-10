@@ -57,5 +57,5 @@ for i in range(1000):
         print('Test feature : %0.5f\n' % feature);       
         sys.exit('La salida de cnnConvolve no coincide con el test')
 
-print('Felicitacines! Su implementacion paso el test.')
+print('Felicitaciones! Su implementacion paso el test.')
 

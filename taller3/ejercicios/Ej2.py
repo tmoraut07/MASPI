@@ -12,7 +12,8 @@ expectedMatrix = np.array([[np.mean(np.mean(testMatrix[0:4, 0:4])), np.mean(np.m
                   [np.mean(np.mean(testMatrix[4:8, 0:4])), np.mean(np.mean(testMatrix[4:8, 4:8]))]])
             
 testMatrix = np.reshape(testMatrix, (8, 8, 1, 1))
-        
+
+#print("------------------------------------", testMatrix.shape)
 pooledFeatures = np.squeeze(cnnPool(4, testMatrix))
 
 if not (pooledFeatures.all() == expectedMatrix.all()):
